@@ -31,3 +31,19 @@ function equipWeapon(obj){
         obj.weapon = obj.inventory[0]
     } 
 }
+
+function createElement(txt){
+    const paragraph = document.createElement('p');
+    const display = document.getElementById('display')
+    display.appendChild(paragraph);
+    paragraph.innerText = txt;
+}
+
+function displayStats(){
+    createElement(`Hero's name: ${hero.name}`);
+    createElement(`Health: ${hero.health}`);
+    createElement(`Weapon: ${hero.weapon.type}`);
+    createElement(`Weapon damage: ${hero.weapon.damage}`);
+}
+
+displayStats();
