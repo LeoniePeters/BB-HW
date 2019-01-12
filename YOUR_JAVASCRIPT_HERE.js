@@ -16,8 +16,13 @@ function rest(obj){
     return obj;
 }
 
-function pickUpItem(){
+const dagger ={
+    type: 'dagger',
+    damage: 2
+}
 
+function pickUpItem(obj1,obj2){
+    obj1.inventory.push(obj2)
 }
 
 function equipWeapon(){
