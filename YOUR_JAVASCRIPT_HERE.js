@@ -29,21 +29,31 @@ function pickUpItem(obj1,obj2){
 function equipWeapon(obj){
     if(obj.inventory[0]){
         obj.weapon = obj.inventory[0]
+        const section = document.getElementById('reload');
+        section.remove();
+        displayStats();
     } 
 }
 
-function createElement(txt){
-    const paragraph = document.createElement('p');
-    const display = document.getElementById('display')
-    display.appendChild(paragraph);
-    paragraph.innerText = txt;
-}
 
 function displayStats(){
-    createElement(`Hero's name: ${hero.name}`);
-    createElement(`Health: ${hero.health}`);
-    createElement(`Weapon: ${hero.weapon.type}`);
-    createElement(`Weapon damage: ${hero.weapon.damage}`);
+    const display = document.getElementById('display');
+    const section = document.createElement('section');
+    section.id = 'reload'
+    display.appendChild(section);
+    const paragraph = document.createElement('p');
+    section.appendChild(paragraph)
+    paragraph.innerText = `Hero's name: ${hero.name}`;
+    const paragraph2 = document.createElement('p');
+    section.appendChild(paragraph2)
+    paragraph2.innerText = `Health: ${hero.health}`;
+    const paragraph3 = document.createElement('p');
+    section.appendChild(paragraph3)
+    paragraph3.innerText =`Weapon: ${hero.weapon.type}`;
+    const paragraph4 = document.createElement('p');
+    section.appendChild(paragraph4)
+    paragraph4.innerText = `Weapon damage: ${hero.weapon.damage}`;
+    
 }
 
 displayStats();
