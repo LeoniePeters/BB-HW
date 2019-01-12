@@ -25,6 +25,9 @@ function pickUpItem(obj1,obj2){
     obj1.inventory.push(obj2)
 }
 
-function equipWeapon(){
-    
+
+function equipWeapon(obj){
+    if(obj.inventory[0]){
+        obj.weapon = obj.inventory[0]
+    } 
 }
